@@ -2,7 +2,9 @@ sudo: required
 
 services:
   - docker
-  
+
 script:
   - docker build -t excel61/docker-react .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push excel61/docker-react
   
