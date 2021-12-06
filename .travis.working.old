@@ -9,7 +9,7 @@ script:
   - docker run excel61/docker-react-test npm test -- --coverage
 
 after_success:
-  - docker build -t excel61/docker-react .
+  - docker build -t excel61/docker-react1 .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push excel61/docker-react
   
