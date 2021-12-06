@@ -6,7 +6,7 @@ services:
 before_install:
   - docker build -t excel61/docker-react-test -f Dockerfile.dev .
 script:
-  - docker run excel61/docker-react-test npm test 
+  - docker run excel61/docker-react-test npm run test 
   - docker build -t excel61/docker-react2 .
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
